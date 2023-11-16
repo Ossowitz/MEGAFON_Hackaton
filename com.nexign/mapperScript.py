@@ -10,7 +10,7 @@ class Customer:
     def __dict__(self):
         return {
             "party": self.party.__dict__(),
-            "type": self.type.__dict__()
+            "type": self.type.__str__()
         }
 
     class Party:
@@ -118,8 +118,8 @@ class Customer:
         def __init__(self, type_data):
             self.type_data = type_data
 
-        def __dict__(self):
-            return {"type_data": self.type_data}
+        def __str__(self):
+            return self.type_data
 
 
 body = {
@@ -153,7 +153,6 @@ body = {
 }
 
 customer = Customer(body)
-# dumps = json.dumps(customer, default=lambda o: o.__dict__, ensure_ascii=False, indent=4)
 dumps = json.dumps(customer.__dict__(), ensure_ascii=False, indent=4)
 print(dumps)
 
