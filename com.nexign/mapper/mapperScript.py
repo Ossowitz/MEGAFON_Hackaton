@@ -1,4 +1,5 @@
 import json
+import psycopg2
 import requests
 
 
@@ -129,10 +130,10 @@ body = {
         "birthPlace": "г. Санкт-Петербург",
         "gender": {"genderId": 1},
         "identificationDocument": {
-            "dateOfIssue": "2001-12-22",
-            "divisionCode": "946-047",
+            "dateOfIssue": "2001-12-12",
+            "divisionCode": "946-777",
             "number": "122262247300339",
-            "providedByOrganization": "20 Отделение по оформлению внутренних паспортов и регистрации граждан РФ - Красносельский район",
+            "providedByOrganization": "15 Отделение по оформлению внутренних паспортов и регистрации граждан РФ - Красносельский район",
             "series": "1812",
             "type": {"identificationTypeId": 5},
             "validFor": "2047-02-01"
@@ -141,34 +142,33 @@ body = {
         "isResident": True,
         "nameInfo": {
             "firstName": "Пётр",
-            "patronymic": "Алексеевич",
-            "surname": "Васильев"
+            "patronymic": "Леонидович",
+            "surname": "Колобанов"
         },
         "nationality": {"nationalityId": 1},
         "publicOfficial": False,
         "speakingLanguage": {"languageId": 3},
-        "taxRegistrationCertificate": {"taxIdentificationNumber": "705552995720"}
+        "taxRegistrationCertificate": {"taxIdentificationNumber": "705332995790"}
     },
     "type": "INDIVIDUAL"
 }
 
 customer = Customer(body)
-dumps = json.dumps(customer.__dict__(), ensure_ascii=False, indent=4)
+dumps = customer.__dict__()
 print(dumps)
 
-# url = "url"
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+
+# url = "http://dbss-sso.external.rm-juniata.cloud.billing.ru:47226/openapi/v1/customerManagement/customers"
 # auth = ('Admin', '1111')
 #
-# response = requests.post(url, json=body, auth=auth)
+# response = requests.post(url, json=dumps, auth=auth)
 #
 # client_id = response.json()["customerId"]
 # get_url = url + '/' + str(client_id)
 #
 # get_response = requests.get(get_url, auth=auth)
 #
-# data = get_response.json()
-# client = Customer(data)
-#
-# dumps = json.dumps(client, default=lambda o: o.__dict__, ensure_ascii=False)
-# print(dumps)
-#
+# print(client_id)
+# print(get_response)
