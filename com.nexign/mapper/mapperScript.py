@@ -12,8 +12,8 @@ customer = Customer(body)
 dumps = customer.__dict__()
 print(dumps)
 
-url = "http://dbss-sso.external.rm-dhekoli.cloud.billing.ru:47226/openapi/v1/customerManagement/customers"
-auth = ('Admin', '1111')
+url = "url"
+auth = ('user', 'pass')
 
 response = requests.post(url, json=dumps, auth=auth)
 
@@ -30,10 +30,10 @@ patronymic = new_body['party']['nameInfo']['patronymic']
 surname = new_body['party']['nameInfo']['surname']
 
 connection_params = {
-    "database": "CHM",
-    "user": "chm",
-    "password": "chm",
-    "host": "dbss-postgres.rm-root.cloud.billing.ru",
+    "database": "name",
+    "user": "name",
+    "password": "name",
+    "host": "url",
     "port": "5432"
 }
 

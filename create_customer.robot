@@ -2,8 +2,8 @@
 Library    RequestsLibrary
 
 *** Variables ***
-${base_url}    http://dbss-sso.external.rm-dhekoli.cloud.billing.ru:47226/openapi/v1/customerManagement/customers
-${auth}    ('Admin', '1111')
+${base_url}    url
+${auth}    ('user', 'pass')
 ${headers}    Content-Type=application/json
 ${request_body}    ${EMPTY}
 ...    {
