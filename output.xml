@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.6.8 on win32)" generated="20240212 12:39:33.185" rpa="false" schemaversion="4">
+<suite id="s1" name="DataAggregator" source="C:\Users\Ilya.Tikhomirov\PycharmProjects\DataAggregator">
+<suite id="s1-s1" name="Create Customer" source="C:\Users\Ilya.Tikhomirov\PycharmProjects\DataAggregator\create_customer.robot">
+<test id="s1-s1-t1" name="Check Post Request Status Code" line="50">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>my_session</arg>
+<arg>${base_url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20240212 12:39:33.342" level="INFO">Creating Session using : alias=my_session, url=http://dbss-sso.external.rm-dhekoli.cloud.billing.ru:47226/openapi/v1/customerManagement/customers, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20240212 12:39:33.341" endtime="20240212 12:39:33.342"/>
+</kw>
+<kw name="Post Request" library="RequestsLibrary">
+<var>${response}</var>
+<arg>my_session</arg>
+<arg>${base_url}</arg>
+<arg>data=${request_body}</arg>
+<arg>headers=${headers}</arg>
+<arg>auth=${auth}</arg>
+<doc>*DEPRECATED* Please use `POST On Session` instead.</doc>
+<msg timestamp="20240212 12:39:33.343" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
+<msg timestamp="20240212 12:39:33.344" level="FAIL">Keyword 'RequestsLibrary.Post Request' got unexpected named argument 'auth'.</msg>
+<status status="FAIL" starttime="20240212 12:39:33.343" endtime="20240212 12:39:33.344"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>200 &lt;= ${response.status_code} &lt; 300</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="NOT RUN" starttime="20240212 12:39:33.344" endtime="20240212 12:39:33.344"/>
+</kw>
+<status status="FAIL" starttime="20240212 12:39:33.341" endtime="20240212 12:39:33.345">Keyword 'RequestsLibrary.Post Request' got unexpected named argument 'auth'.</status>
+</test>
+<status status="FAIL" starttime="20240212 12:39:33.231" endtime="20240212 12:39:33.346"/>
+</suite>
+<status status="FAIL" starttime="20240212 12:39:33.188" endtime="20240212 12:39:33.347"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="DataAggregator">DataAggregator</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Create Customer">DataAggregator.Create Customer</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20240212 12:39:33.343" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
+</errors>
+</robot>
