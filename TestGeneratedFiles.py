@@ -6,7 +6,7 @@ import csv
 class TestGeneratedFiles(unittest.TestCase):
 
     def test_files_creation(self):
-        people_directory = os.path.abspath("com.nexign/people")  # Укажите путь до директории с файлами
+        people_directory = os.path.abspath("com.nexign/people")
         expected_header = ["name", "b_day", "active", "po"]
 
         file_counts = {
@@ -27,4 +27,4 @@ class TestGeneratedFiles(unittest.TestCase):
                     self.assertEqual(header, expected_header)  # Проверка соответствия заголовка
 
                     rows = list(reader)
-                    self.assertEqual(len(rows), 100)  # Проверка количества общих строк
+                    self.assertEqual(len(rows), 100)  # Проверка количества строк

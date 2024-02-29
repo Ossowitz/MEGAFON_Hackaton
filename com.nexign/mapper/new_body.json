@@ -1,0 +1,39 @@
+{
+  "party": {
+    "biometricData": true,
+    "birthDate": "1977-01-08",
+    "birthPlace": "г. Санкт-Петербург",
+    "gender": {
+      "genderId": 1
+    },
+    "identificationDocument": {
+      "dateOfIssue": "2001-12-12",
+      "divisionCode": "946-777",
+      "number": "122262247300339",
+      "providedByOrganization": "15 Отделение по оформлению внутренних паспортов и регистрации граждан РФ - Красносельский район",
+      "series": "1812",
+      "type": {
+        "identificationTypeId": 5
+      },
+      "validFor": "2047-02-01"
+    },
+    "INILA": "85513361297",
+    "isResident": true,
+    "nameInfo": {
+      "firstName": "Илья",
+      "patronymic": "Алексеевич",
+      "surname": "Тихомиров"
+    },
+    "nationality": {
+      "nationalityId": 1
+    },
+    "publicOfficial": false,
+    "speakingLanguage": {
+      "languageId": 3
+    },
+    "taxRegistrationCertificate": {
+      "taxIdentificationNumber": "705332995790"
+    }
+  },
+  "type": "INDIVIDUAL"
+}
